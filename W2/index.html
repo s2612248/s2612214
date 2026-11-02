@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今天吃什麼？ - 美食隨機抽籤機</title>
+    <!-- CSS 樣式表連結 -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome 圖示庫 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts 柔和圓潤字體 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+    <!-- JS 腳本檔案，使用 defer 確保 DOM 載入完畢才執行 -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- 頂部裝飾主題氣泡 -->
+        <div class="header-badge">
+            <i class="fa-solid fa-utensils"></i> 美食決策神器
+        </div>
+
+        <!-- 主卡片區域 -->
+        <main class="card">
+            <!-- 標題區域 (抽籤時會呈現快速滾動與動畫效果) -->
+            <div class="title-wrapper">
+                <h1 id="main-title" class="title">今天吃什麼？</h1>
+            </div>
+
+            <p class="subtitle">告別選擇困難症！點擊下方按鈕，幫你隨機挑選今天的美味餐點。</p>
+
+            <!-- 抽籤結果顯示區塊 (預設隱藏) -->
+            <div id="result-card" class="result-card hidden">
+                <div class="image-container">
+                    <img id="food-image" src="" alt="美食圖片" onerror="this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80'">
+                    <span id="food-tag" class="food-tag">熱門推薦</span>
+                </div>
+                
+                <!-- 馬上出發導航按鈕 -->
+                <a id="maps-link" href="#" target="_blank" rel="noopener noreferrer" class="go-btn">
+                    <i class="fa-solid fa-location-dot"></i> 馬上出發
+                </a>
+            </div>
+
+            <!-- 抽籤觸發按鈕 -->
+            <div class="action-area">
+                <button id="draw-btn" class="draw-button">
+                    <span class="btn-text">點我抽籤</span>
+                    <i class="fa-solid fa-dice btn-icon"></i>
+                </button>
+            </div>
+        </main>
+
+        <!-- 頁尾宣告 -->
+        <footer class="footer">
+            <p> Designed for Food Lovers • 淺藍美學視覺設計</p>
+        </footer>
+    </div>
+</body>
+</html>
