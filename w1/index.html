@@ -4,8 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>個人數位名片</title>
-    <!-- 連結外部 CSS 檔 -->
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 基礎重設與字體設定 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+        }
+
+        /* 全螢幕背景與完美置中設定 */
+        body {
+            background-color: #eef5f9; /* 極淺淡藍色背景 */
+            display: flex;
+            justify-content: center; /* 水平居中 */
+            align-items: center;     /* 垂直居中 */
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* 簡約名片主體 */
+        .card {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 320px;            /* 名片寬度控制 */
+            padding: 35px 25px;
+            border-radius: 20px;         /* 柔和圓角 */
+            box-shadow: 0 10px 30px rgba(160, 190, 215, 0.2); /* 淺藍色系淡陰影 */
+            text-align: center;          /* 內部所有文字與內容置中 */
+        }
+
+        /* 需求 1: 圓型大頭貼 */
+        .avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;          /* 關鍵：設為 50% 讓圖片變成圓形 */
+            object-fit: cover;           /* 防止圖片變形 */
+            border: 3px solid #b3d7ff;   /* 淺藍色相框外圈 */
+            margin-bottom: 20px;
+        }
+
+        /* 需求 2: 名字與簡介 */
+        .name {
+            font-size: 1.4rem;
+            color: #2b4c6f;              /* 深藍灰色 */
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .bio {
+            font-size: 0.9rem;
+            color: #6c869b;              /* 柔和灰藍色 */
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        /* 需求 3: 按鈕樣式 */
+        .button-group {
+            display: flex;
+            flex-direction: column;      /* 按鈕上下排列 */
+            gap: 12px;                   /* 按鈕間距 */
+        }
+
+        .btn {
+            display: block;
+            padding: 12px 0;
+            border-radius: 12px;
+            text-decoration: none;        /* 移除超連結下劃線 */
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;   /* 動畫平滑效果 */
+        }
+
+        /* Instagram 按鈕：淺藍底深藍字 */
+        .btn-instagram {
+            background-color: #dbeafe;   /* 淺藍色 */
+            color: #1e40af;              /* 深藍色字體 */
+        }
+
+        /* Email 按鈕：外框風格 */
+        .btn-email {
+            background-color: transparent;
+            color: #3b82f6;
+            border: 1.5px solid #93c5fd;  /* 淺藍外框 */
+        }
+
+        /* 滑鼠移上去的互動效果 (Hover Effect) */
+        .btn-instagram:hover {
+            background-color: #bfdbfe;
+            transform: translateY(-2px); /* 微微向上浮起 */
+        }
+
+        .btn-email:hover {
+            background-color: #eff6ff;
+            transform: translateY(-2px); /* 微微向上浮起 */
+        }
+    </style>
 </head>
 <body>
 
@@ -18,7 +112,7 @@
         </div>
 
         <!-- 2. 名字與簡短自我介紹 -->
-        <h1 class="name">你的名字</h1>
+        <h1 class="name"> your name </h1>
         <p class="bio">熱愛生活的 UI/UX 設計新手，正在用設計讓世界變得更有趣！</p>
 
         <!-- 3. 下方兩個按鈕 -->
